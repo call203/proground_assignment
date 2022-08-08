@@ -1,0 +1,37 @@
+.card{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 24px;
+}
+
+.card-index{
+ font-size: 16px;
+}
+
+.card-content{
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  flex: 1;
+}
+
+.card-img{
+ width: 40px;
+ height: 40px;
+ margin-left: 20px;
+ margin-right: 24px;
+}
+
+.card-img img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(208, 208, 208, 0.933)
+}
+
+.card-user-name{
+  display: block;
+}
+.card-date {
+}

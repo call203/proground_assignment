@@ -1,0 +1,30 @@
+.wrapper{
+  width: 100%;
+  background: white;
+  padding: 16px;
+}
+
+.wrapper header{
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.walk-container{
+  margin: 8px 0;
+}
+
+.walk-container strong {
+  font-size: 26px;
+  margin-right: 4px;
+}
+
+.walk-container span{
+  font-weight: 600;
+}
+
+.walk-info-message{
+  font-weight: 500;
+  color: #7b7b7b;
+  display: flex;
+  align-items: center;
+}

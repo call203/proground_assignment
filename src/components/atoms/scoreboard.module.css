@@ -1,0 +1,51 @@
+.wrapper header{
+  font-size: 18px;
+  font-weight: bold;
+  padding-top: 16px;
+}
+.score{
+  margin: 10px 0;
+}
+
+.score-container strong{
+  font-size: 34px;
+  margin-right: 6px;
+}
+
+.score-container span{
+  font-weight: 600;
+}
+
+.progress-container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 14px;
+  border-radius: 4px;
+  background-color: #eeeeee;
+}
+
+.progress-container:before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  /* width: var(--width); */
+  width: 60%;
+  transition: all ease 0.8s 0s;
+  border-radius: 10px;
+  background-color: #ebc0ad;
+}
+
+.score-info-message{
+  font-weight: 500;
+  color: #7b7b7b;
+  display: flex;
+  align-items: center;
+}
+
+.score-info-message b {
+  color: #f55a18;
+}

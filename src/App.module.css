@@ -1,0 +1,9 @@
+.page-content{
+  margin: 0 auto;
+  max-width: 550px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #111111;
+  background-color: #EEEEEE;
+}
