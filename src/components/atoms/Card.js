@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 
 const cx = classNames.bind(styles);
 const Card = (props) => {
+  console.log('props' , props)
   return (
     <div className={cx('card')}>
       <div className='card-index'>
