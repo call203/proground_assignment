@@ -1,0 +1,31 @@
+.main-wrapper{
+  background-color: #e7e7e7;
+}
+
+.walk-board-title{
+  font-weight: bold;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.walk-board-body{
+  margin: 20px 16px;
+}
+
+.leader-board-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 16px;
+}
+
+.leader-board-header p {
+  font-weight: bold;
+}
+
+.leader-board-body{
+  border-radius: 6px;
+  margin: 20px 16px;
+  background-color: #ebebeb;
+  box-shadow: 2px 1px 20px 1px rgba(0,0,0,0.1);
+}

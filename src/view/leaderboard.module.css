@@ -1,0 +1,17 @@
+
+.leader-board-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 16px;
+  height: 50px;
+  font-size: 18px;
+}
+
+.leader-board-header p {
+  font-weight: bold;
+}
+
+.leader-board-body{
+  
+}
