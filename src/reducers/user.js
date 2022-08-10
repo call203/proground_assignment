@@ -1,48 +1,36 @@
 import produce from 'immer';
-import axios from 'axios'
-
-const URL = 'https://mxl2ywa4zhlvwjymvb5gnc247a0qfndn.lambda-url.ap-northeast-2.on.aws/'
-const _request = (request) => {
-  return axios(request).then((result) => {
-    return result.data
-  }).catch((err) => {
-    console.error(err)
-  })
-}
+import { createPromiseThunk, reducerUtils, handleAsyncActions } from '../lib/asyncUtils';
 
 export const initialState ={
-    image : '',
-    serialNumber : '',
-    price : 0,
-    list: []
+    list: reducerUtils.initial(),
+    item: reducerUtils.initial(),
 }
 
+export const GET_USERS_DATA = 'GET_USERS_DATA';
+export const GET_USERS_DATA_SUCCESS = 'GET_USERS_DATA_SUCCESS';
+export const GET_USERS_DATA_ERROR = 'GET_USERS_DATA_ERROR';
 
-export const USER_REQUEST = 'USER_REQUEST';
+export const GET_USER_DATA = 'GET_USER_DATA';
+export const GET_USER_DATA_SUCCESS = 'GET_USER_DATA_SUCCESS';
+export const GET_USER_DATA_ERROR = 'GET_USER_DATA_ERROR';
 
-export const userRequestAction = (data) => {
-  // const limit = 10
-  // const offset = 0
-  // _request({
-  //   method: 'get',
-  //   url:  URL+ `?limit=${limit}&offset=${offset}`
-  // }).then((result) => {
-  //   console.log('Action 들어오나??', result)
-  //   return result
-  // })
-    return{
-        type:USER_REQUEST,
-     } 
- }
+export const getUsersData = createPromiseThunk(GET_USERS_DATA, 10, 0);
+export const getUserData = (selected) => {
+  
+};
  
 const reducer = (state = initialState, action) =>{
   return produce(state, (draft) =>{
     switch (action.type) {
-      case USER_REQUEST:
-        draft.list = action.data
-        console.log('draft.list', draft.list)
-        break;
-        
+      case GET_USERS_DATA:
+      case GET_USERS_DATA_SUCCESS:
+      case GET_USERS_DATA_ERROR:
+        return handleAsyncActions(GET_USERS_DATA, 'list')(state, action);
+
+      case GET_USER_DATA:
+      case GET_USER_DATA_SUCCESS:
+      case GET_USER_DATA_ERROR:
+        return handleAsyncActions(GET_USER_DATA, 'item')(state, action);
       default:
         break;
                 
