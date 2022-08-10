@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 10px 24px;
+  padding: 12px 24px;
 }
 
 .card-index{
@@ -19,7 +19,7 @@
 .card-img{
  width: 40px;
  height: 40px;
- margin-left: 20px;
+ margin-left: 12px;
  margin-right: 24px;
 }
 

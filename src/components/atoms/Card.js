@@ -1,30 +1,34 @@
 import React from 'react';
 import styles from './card.module.css';
 import classNames from 'classnames/bind';
+import { useSelector, useDispatch } from 'react-redux';
+import { getUserData } from '../../reducers/user';
 
 const cx = classNames.bind(styles);
 const Card = (props) => {
-  console.log('props' , props)
+  const {image, serialNumber, price} = props.cardInfo
+  const dispatch = useDispatch();
+
+  const clickHandler = e => {
+    dispatch(getUserData(serialNumber))
+  }
+
   return (
-    <div className={cx('card')}>
+    <div className={cx('card')} onClick={clickHandler}>
       <div className='card-index'>
-        {/* {{ props.count }} */}
         1
       </div>
       <div className={cx('card-content')}>
-        {/* <img src={props.img} alt="img" /> */}
         <div className={cx('card-img')}>
-          <img src="https://cdn.imweb.me/thumbnail/20220111/6e366bff0c29b.jpg" alt="img" />
+          <img src={image} alt="img" />
         </div>
         <span className={cx('card-user-name')}>
-          {/* {{ props.serialNumber }} */}
-          태현
+          { serialNumber }
         </span>     
       </div>
      
       <div className={cx('card-date')}>
-        {/* {{ props.date }} */}
-        27.04
+        { price }
       </div>
     </div>
   );

@@ -1,7 +1,10 @@
+.wrapper{
+  padding: 16px 20px;
+  background-color: #ffffff;
+}
 .wrapper header{
   font-size: 18px;
   font-weight: bold;
-  padding-top: 16px;
 }
 .score{
   margin: 10px 0;
@@ -21,9 +24,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 14px;
+  height: 12px;
   border-radius: 4px;
   background-color: #eeeeee;
+  margin: 12px 0;
 }
 
 .progress-container:before{
@@ -36,12 +40,12 @@
   width: 60%;
   transition: all ease 0.8s 0s;
   border-radius: 10px;
-  background-color: #ebc0ad;
+  background-color: #ecb8a9;
 }
 
 .score-info-message{
   font-weight: 500;
-  color: #7b7b7b;
+  color: #929292;
   display: flex;
   align-items: center;
 }
