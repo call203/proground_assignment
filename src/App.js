@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className={cx('page-content')}>
         <Routes>
-          <Route path="/" element={<Main />} />
+          <Route path="/" exact={true} element={<Main />} />
           <Route path="/board" element={<LeaderBoard />} />
         </Routes>
       </div>
