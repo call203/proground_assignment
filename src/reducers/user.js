@@ -10,13 +10,13 @@ export const GET_USERS_DATA = 'GET_USERS_DATA';
 export const GET_USERS_DATA_SUCCESS = 'GET_USERS_DATA_SUCCESS';
 export const GET_USERS_DATA_ERROR = 'GET_USERS_DATA_ERROR';
 
-export const GET_USER_DATA = 'GET_USER_DATA';
-export const GET_USER_DATA_SUCCESS = 'GET_USER_DATA_SUCCESS';
-export const GET_USER_DATA_ERROR = 'GET_USER_DATA_ERROR';
+export const REMOVE_USER_DATA = 'REMOVE_USER_DATA';
+export const REMOVE_USER_DATA_SUCCESS = 'REMOVE_USER_DATA_SUCCESS';
+export const REMOVE_USER_DATA_ERROR = 'REMOVE_USER_DATA_ERROR';
 
 export const getUsersData = createPromiseThunk(GET_USERS_DATA, 10, 0);
-export const getUserData = selected => ({
-  type: GET_USER_DATA_SUCCESS,
+export const deleteUserData = selected => ({
+  type: REMOVE_USER_DATA_SUCCESS,
   payload: {
     data: selected
   }
@@ -30,10 +30,10 @@ const reducer = (state = initialState, action) =>{
       case GET_USERS_DATA_ERROR:
         return handleAsyncActions(GET_USERS_DATA, 'list')(state, action);
 
-      case GET_USER_DATA:
-      case GET_USER_DATA_SUCCESS:
-      case GET_USER_DATA_ERROR:
-        return handleAsyncActions(GET_USER_DATA, 'item')(state, action);
+      case REMOVE_USER_DATA:
+      case REMOVE_USER_DATA_SUCCESS:
+      case REMOVE_USER_DATA_ERROR:
+        return handleAsyncActions(REMOVE_USER_DATA, 'list')(state, action);
       default:
         break;
                 
