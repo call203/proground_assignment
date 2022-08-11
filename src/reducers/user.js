@@ -15,9 +15,12 @@ export const GET_USER_DATA_SUCCESS = 'GET_USER_DATA_SUCCESS';
 export const GET_USER_DATA_ERROR = 'GET_USER_DATA_ERROR';
 
 export const getUsersData = createPromiseThunk(GET_USERS_DATA, 10, 0);
-export const getUserData = (selected) => {
-  
-};
+export const getUserData = selected => ({
+  type: GET_USER_DATA_SUCCESS,
+  payload: {
+    data: selected
+  }
+});
  
 const reducer = (state = initialState, action) =>{
   return produce(state, (draft) =>{
