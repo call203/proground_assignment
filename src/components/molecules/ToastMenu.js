@@ -1,15 +1,36 @@
-import React from 'react';
-import styles from './overlay.module.css';
+import React, { useEffect, useRef, useState } from 'react';
+import styles from './toastmenu.module.css';
 import classNames from 'classnames/bind';
-import Overlay from '../atoms/Overlay';
+import Toast from '../atoms/Toast';
 
 const cx = classNames.bind(styles);
-const ScoreBoard = (props) => {
+const ToastMenu = ({item, toastClick, setToastClick}) => {
+  const toastEl = useRef();
+
+  const modalCloseHandler = ({ target }) => {
+    if(toastClick && !toastEl.current?.contains(target)){
+      setToastClick(false)
+    }
+  };
+  
+  useEffect(() => {
+    window.addEventListener('click', modalCloseHandler);
+    return () => {
+      window.removeEventListener('click', modalCloseHandler);
+    };
+  });
+
   return (
-    <Overlay>
-      
-    </Overlay>
+    <>
+      {toastClick &&
+      <div className={cx('overlay')}>
+        <div ref={toastEl} className={cx('toast-wrapper')}>
+          <Toast item={item} setToastClick={setToastClick} />
+        </div>
+      </div>
+      }
+    </>
   );
 };
 
-export default ScoreBoard;
+export default ToastMenu;
