@@ -13,7 +13,6 @@ const cx = classNames.bind(styles);
 const Main = () => {
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector((state) => state.user.list);
- 
   useEffect(() => {
     dispatch(getUsersData())
   }, [dispatch]); 
@@ -34,7 +33,7 @@ const Main = () => {
       </div>
       <div className={cx('leader-board-body')}>
         {data.map((item, index) => {
-          return <Card cardInfo={item} key={index}/>
+          return <Card cardInfo={item} number={index} key={index}/>
         })}
       </div>
     </div>
