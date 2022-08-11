@@ -1,4 +1,5 @@
 .overlay {
+  position: fixed;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
@@ -7,4 +8,75 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.toast-wrapper{
+  position: fixed;
+  bottom: 0px;
+  display: inline-block;
+  background-color: #ffffff;
+  border-radius: 12px 12px 0 0;
+  min-width: 100%;
+  padding-top: 16px;
+  padding-bottom: 8px;
+}
+
+.toast-wrapper .toast-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.toast-card-img{
+ width: 100px;
+ height: 100px;
+ margin: 16px auto;
+}
+
+.toast-card-img img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(208, 208, 208, 0.933)
+}
+
+.toast-user-name{
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.toast-button-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 48px;
+  margin-bottom: 40px;
+}
+
+.toast-button{
+  position: relative;
+  border-radius: 8px;
+  width: 200px;
+  height: 52px;
+  box-shadow: 3px 3px;
+  background-color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.toast-button::after{
+  content: '';
+  position: absolute;
+  bottom: -42px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 5px;
+  background-color: #000000;
+  border-radius: 10px;
 }
