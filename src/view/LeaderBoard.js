@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from './leaderboard.module.css';
 import classNames from 'classnames/bind';
 import Card from '../components/atoms/Card';
+import Loading from '../components/atoms/Loading';
 import ToastMenu from '../components/molecules/ToastMenu';
 import { useSelector } from 'react-redux';
 import { getUserData } from '../reducers/user';
@@ -21,9 +22,8 @@ const LeaderBoard = () => {
     return <ToastMenu item={item} toastClick={toastClick} setToastClick={setToastClick} />
   }
 
-  if (loading) return <div>로딩중...</div>;
   if (error) return <div>에러 발생!</div>;
-  if (!data) return null;
+  if (!data || loading) return <Loading />;
   return (
     <div>
       <div className={cx('leader-board-header')}>
