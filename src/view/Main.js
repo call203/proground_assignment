@@ -12,12 +12,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getUsersData } from '../reducers/user';
 
 const cx = classNames.bind(styles);
-const Main = () => {
+export function Main () {
   const dispatch = useDispatch();
   const { data, loading, error } = useSelector((state) => state.user.list);
   useEffect(() => {
     dispatch(getUsersData())
-  }, [dispatch]); 
+  }, []); 
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
@@ -26,15 +26,22 @@ const Main = () => {
     };
   }, []);
 
-  const handleScroll = () => {
-    console.log()
+  const handleScroll = (event) => {
+    const windowposition = event.srcElement.scrollingElement.scrollTop + window.innerHeight
+    if(windowposition >= event.srcElement.scrollingElement.scrollHeight){
+      if(!loading){
+        dispatch(getUsersData())
+      }
+    }
   };
+  
 
   if (error) return <div>에러 발생!</div>;
-  if (!data || loading) return <Loading />;
+  if (!data) return ;
   return (
     <>
       <div className={cx('main-wrapper')}>
+        {loading && <Loading />}
         <Header/>
         <ScoreBoard/>
         <div className={cx('walk-board-body')}>
@@ -55,4 +62,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export const MemoizedMain = React.memo(Main);
