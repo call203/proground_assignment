@@ -8,25 +8,25 @@ const Header = (props) => {
     <>
     <div className={cx("wrapper")}>
       <div className={cx('user-icon')}>
-        <img src={UserProfile} alt="" />
+        <img src={UserProfile} alt="UserProfile" />
       </div>
       <div className={cx('content')}>
         <div className={cx('network-content')}>
           <span className={cx('network-content-item')}>
-            <img src={CNK} alt="" />
+            <img src={CNK} alt="CNK" />
               <b>1.2</b>
           </span>
           <span className={cx('network-content-item')}>
-            <img src={GRND} alt="" />
+            <img src={GRND} alt="GRND" />
               <b>0</b>
           </span>
           <span className={cx("network-content-item")}>
-            <img src={KLAY} alt="" />
+            <img src={KLAY} alt="KLAY" />
               <b>1.07</b>
           </span>
         </div>
         <div className={cx('wallet-content')}>
-          <img src={Wallet} alt="" />
+          <img src={Wallet} alt="Wallet" />
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import styles from './toastmenu.module.css';
 import classNames from 'classnames/bind';
 import Toast from '../atoms/Toast';
