@@ -5,7 +5,8 @@ import Card from '../components/atoms/Card';
 import Loading from '../components/atoms/Loading';
 import ToastMenu from '../components/molecules/ToastMenu';
 import { useSelector } from 'react-redux';
-import { getUserData } from '../reducers/user';
+import { Link } from 'react-router-dom';
+import {BackBlack} from '../Asset'
 
 const cx = classNames.bind(styles);
 const LeaderBoard = () => {
@@ -27,7 +28,9 @@ const LeaderBoard = () => {
   return (
     <div>
       <div className={cx('leader-board-header')}>
-        {/* <Link to="/board">View All</Link>  */}
+        <Link to="/" className={cx('arrow-back')}>
+         <img src={BackBlack} alt="" />
+        </Link> 
         <p>Leader Board</p>
       </div>
       <div className={cx('leader-board-body')}>

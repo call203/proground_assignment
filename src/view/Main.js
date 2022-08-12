@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import Header from '../components/molecules/Header';
 import ScoreBoard from '../components/atoms/ScoreBoard';
 import WalkBoard from '../components/atoms/WalkBoard';
 import Loading from '../components/atoms/Loading';
@@ -34,6 +35,7 @@ const Main = () => {
   return (
     <>
       <div className={cx('main-wrapper')}>
+        <Header/>
         <ScoreBoard/>
         <div className={cx('walk-board-body')}>
           <p className={cx('walk-board-title')}>Estimated WALK</p> 
