@@ -32,7 +32,6 @@
     "use-react-router": "^1.0.7"
   },
   "devDependencies": {
-    "babel-plugin-react-scoped-css": "^1.1.1",
     "webpack": "4.40.2",
     "webpack-cli": "3.3.9"
   }
