@@ -14,7 +14,7 @@
 - View All 클릭  ->  유저 클릭  ->   Block 클릭시 ->  리스트에서 유저삭제
 - 유저 삭제는 별도의 API 요청 없이 AsyncStorage 및 LocalStorage를 사용해주세요.
 - 리스트 이외의 값들은 API요청 없이 코드에 원하는 값을 넣어주세요.
-- 사용 API : https://mxl2ywa4zhlvwjymvb5gnc247a0qfndn.lambda-url.ap-northeast-2.on.aws/?limit={limit}&offset={offset}
+- 
 
 ```
 image :  프로필 사진
